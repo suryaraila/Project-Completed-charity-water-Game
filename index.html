@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>charity: water Game Prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero-banner">
+      <div>
+        <p class="brand-label">charity: water</p>
+        <h1>Water Drop Rescue</h1>
+        <p class="subtitle">Click the drops before time runs out and avoid the dry rocks!</p>
+      </div>
+      <div class="stats-panel">
+        <div class="stat-card">
+          <span>Score</span>
+          <strong id="scoreValue">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Time</span>
+          <strong id="timerValue">60</strong>
+        </div>
+      </div>
+    </header>
+
+    <section class="game-area" aria-label="Game board">
+      <div class="game-controls">
+        <button id="resetButton" class="action-button">Reset Game</button>
+        <p class="goal-line">Goal: Reach <strong>15</strong> drops before the timer ends.</p>
+      </div>
+      <div class="playground" id="playground" aria-live="polite">
+        <div class="game-message" id="gameMessage">Tap water drops to fill the well.</div>
+      </div>
+    </section>
+
+    <section class="reflection">
+      <h2>About the Prototype</h2>
+      <p>This game uses a charity: water theme with blue and gold branding, interactive drop clicks, score tracking, a timer, and a challenge penalty for dry rocks.</p>
+      <div class="reflection-grid">
+        <article>
+          <h3>What I built</h3>
+          <p>A simple web game where players collect water drops and avoid hazard rocks to fill the well and score points.</p>
+        </article>
+        <article>
+          <h3>How it works</h3>
+          <p>Clickable elements update the score and trigger the win or penalty states. The timer and reset button keep gameplay moving.</p>
+        </article>
+        <article>
+          <h3>Why it helps</h3>
+          <p>The design emphasizes charity: water colors and theme while making the layout responsive on mobile and desktop devices.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <template id="dropTemplate">
+    <button class="drop target-drop" type="button" data-value="1" aria-label="Water drop">💧</button>
+  </template>
+
+  <template id="hazardTemplate">
+    <button class="drop hazard-drop" type="button" data-value="-2" aria-label="Dry rock hazard">🪨</button>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
